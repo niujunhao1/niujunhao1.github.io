@@ -1,0 +1,229 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>njhhk - njhnb</title><meta name="author" content="njh"><meta name="copyright" content="njh"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta property="og:type" content="website">
+<meta property="og:title" content="njhhk">
+<meta property="og:url" content="https://niujunhao1.github.io/page/3/index.html">
+<meta property="og:site_name" content="njhhk">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://niujunhao1.github.io/null">
+<meta property="article:author" content="njh">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://niujunhao1.github.io/null"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://niujunhao1.github.io/page/3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-05-24 19:28:32'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/null" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://s3.ax1x.com/2020/11/28/DyEZ0x.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">njhhk</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">njhhk</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/niujunhao1" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:598691779@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/fe09be4f/" title="一些小的签到题">     <img class="post_bg" src="https://s4.ax1x.com/2021/03/03/6AqvC9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一些小的签到题"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/fe09be4f/" title="一些小的签到题">一些小的签到题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-03T08:38:46.000Z" title="发表于 2021-03-03 16:38:46">2021-03-03</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客</a></span></div><div class="content">前言这篇是写一些比赛时遇到的题目啦，由于本人实力不佳，只能够做一些签到题啦！
+
+
+
+小白一个（刚接触ctf不久），看看了逆向，发现一道不会（有点思路，但最后还是做不出来），大师傅们别嘲笑。后来我就开始做misc了（做的也不多）
+One_piece这个我做的，其它的我队友做的，（没想到逆向不会）因为刚开始提示四位数字，那我们就可以使用暴力破解：然后解压，就可以看到有两个内容：一个C编写的程序，和一个txt文档；而文档里我们可以知道一些信息，再结合c语言的程序，可知我们少个key。看到密文，我们就知道这是个社会主义核心价值观解密：然后又是个解密，可以看到一些比较熟悉的东西，可知这是个brainfuck解密，因为它只有&gt;&lt;+-.,[]的组合来完成：解密就看到了glbe{pnf_njedc_js_ufjs_kmvrocz!}这个；到这我们就差最后一步了，那我们可能就要用到密钥了，c程序中有四个判断条件，那我们就加上这四个条件，让它们运行起来，拿到密钥。
+运行一下：它告诉了一个密钥，那我们来想想需要密钥的解密有哪些，自然想到了维吉尼亚解密：这样flag就得到了！
+小火龙冲啊下载解压得 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/1b971f3/" title="攻防世界misc新手区">     <img class="post_bg" src="https://s3.ax1x.com/2021/03/02/6FdISK.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="攻防世界misc新手区"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/1b971f3/" title="攻防世界misc新手区">攻防世界misc新手区</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-02T04:52:32.000Z" title="发表于 2021-03-02 12:52:32">2021-03-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客</a></span></div><div class="content">this_is_flag这道题直接将flag给出了。毕竟是新手，刚开始难度是不大的。
+
+
+pdf这个是个pdf格式的flag隐藏在了图片上。
+
+
+如来十三掌打开是个word文档：然后在线解密：题目是十三掌，此时我们就要想到是rot13加密了，此时还不是我们要的flag{}形式，并且与base64加密后极为相似，所以进行base64解密：flag就出来了。
+
+
+give_you_flag发现是个gif动态图，所以我们会用到一个jar包，去一帧一帧的看看里面的每一张图片。此时用PS把二维码给补充完整就可以扫到flag了。 
+1flag&#123;e7d478cf6b915f50ab1277f78502a2c5&#125;
+
+
+坚持60s这个是个游戏了然后就开始逆向了（感觉是逆向题，而不是misc题）java逆向：flag{}里面有==，说明里面应该是 base64加密 过的，我们就要进行一次解密，才能的到正确的flag：flag{DajiDali_JinwanChiji}
+
+
+gif是个压缩包，打开是个文件夹，有图片。
+这里是可以写个脚本（奈何本人没知识，写得不出高大上（强行押韵））然后摩 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/9ce1c7f1/" title="reverse-for-the-holy-grail-350 &amp; tt3441810 &amp; re2-cpp-is-awesome">     <img class="post_bg" src="https://ae01.alicdn.com/kf/Ufedde67497f840a2beefcfecf75459e8N.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="reverse-for-the-holy-grail-350 &amp; tt3441810 &amp; re2-cpp-is-awesome"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/9ce1c7f1/" title="reverse-for-the-holy-grail-350 &amp; tt3441810 &amp; re2-cpp-is-awesome">reverse-for-the-holy-grail-350 &amp; tt3441810 &amp; re2-cpp-is-awesome</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-02-19T09:55:19.000Z" title="发表于 2021-02-19 17:55:19">2021-02-19</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客</a></span></div><div class="content">reverse-for-the-holy-grail-350打开，发现是用C++写的，在攻防世界里面，越往后越是用的C++。userIn这个是个字符串要用到。qword_601AE8也是个。但是这里仔细看发现是不能够得到flag的。所以我们往上看，去找找我们要的。此时我们就要去看看这个函数了，它里面有三个数组了。分析来看，v4是一个关键，不能为负值。stringMod：上面的无法完全找到，所以：再来看看下面的：此时我们就可以开始写脚本了，由下向上的开始吧。但是这样子不好写，而且它也并非是线性关系，而是这个三个数组负责不同的位数。脚本：此时我们再来分析一下代码，因为这个思路可能比较难理解这个脚本。此时我们假如输入的是flag了，它们会进入stringMod这个关键函数，而里面有三个数组《firstchar   thirdchar   masterArray》这三个。然后首先要对3的倍数进行核对（0，3，6….）然后有个必经的循环（上面提到过），此时说明下两个数组要经过这个加密：
+有难点，不过还是能够做出来的。
+
+
+
+tt3441810这道题我首先用ida打开，发现是不行的，所以我们就EP ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/f6542900/" title="二哈学习pwn-2">     <img class="post_bg" src="https://ae01.alicdn.com/kf/Ude6c9119879446f1ade08a3e1b6ea986V.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="二哈学习pwn-2"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/f6542900/" title="二哈学习pwn-2">二哈学习pwn-2</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-21T08:58:00.000Z" title="发表于 2021-01-21 16:58:00">2021-01-21</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客</a></span></div><div class="content">pwntools嗯，本来想直接上题，但是题解还是没有整理好，所以此次我们详细介绍一下pwntools，我所用的是python3版本，python2版本比较老旧，而且已经不更新了，所以我们来介绍一下pwntools里的语句。首先要说的是python3里的bytes和str有了区别，而在python2里没有区别，所以说python2里的脚本到python3里会报错。
+123456bytes object---&gt;b &#x3D; b&quot;example&quot;str object---&gt;s &#x3D; “example”str to bytes---&gt;bytes(s, encoding &#x3D; “utf8”)bytes to str---&gt;str(b, encoding &#x3D; “utf-8”)str to bytes---&gt;str.encode(s)bytes to str---&gt;bytes.decode(b)
+这里列举了python3里的bytes和str转换。
+1234567891011from pwn import *io  ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/85c5cdca/" title="像二哈一样学习pwn">     <img class="post_bg" src="https://s3.ax1x.com/2021/01/19/s2WS9f.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="像二哈一样学习pwn"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/85c5cdca/" title="像二哈一样学习pwn">像二哈一样学习pwn</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-19T11:54:39.000Z" title="发表于 2021-01-19 19:54:39">2021-01-19</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客</a></span></div><div class="content">第一天其实也不算是第一天接触pwn，但写pwn文章算是第一天吧！我们要一点一点的去接触各种的二进制漏洞，一点一点学习pwn，说不定那天我们就能入侵别人的电脑了（哈哈）
+pwntools我们先来看看payload，就是pwn常用的一些函数，毕竟我们最常用到了就是这些了：
+1234567891011from pwn import *io = remote(&quot;127.0.0.1&quot;, 32152)# 与互联网主机交互io.sendline(&quot;hello&quot;)io.send(&quot;hello&quot;)# sendline发送数据会在最后多添加一个回车io.recv(1024)io.revuntil()io.recvline(&quot;hello&quot;)# recv()读取1024个字节，recvline()会读取一直到回车，recvline()读取到指定数据io.interactive()
+
+12io = process(&quot;./bin&quot;, shell=True)#启动本地程序进行交互，用于gdb调试
+
+12345io.p ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/c48f7af2/" title="simple-check-100 &amp; Windows_Reverse1 &amp; gametime">     <img class="post_bg" src="https://s3.ax1x.com/2021/01/12/sYAWfP.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="simple-check-100 &amp; Windows_Reverse1 &amp; gametime"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/c48f7af2/" title="simple-check-100 &amp; Windows_Reverse1 &amp; gametime">simple-check-100 &amp; Windows_Reverse1 &amp; gametime</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-12T09:49:59.000Z" title="发表于 2021-01-12 17:49:59">2021-01-12</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客</a></span></div><div class="content">simple-check-100我们可以看到这个是个压缩包，那我们就解压，发现有三个文件，就按exe文件来进行分析。再来打开ida进行分析一下：此时我们就看看着两个函数分别是什么？check_key这个就是核实我们所输入的数据是否正确。此时我们可以有两个思路，我们可以动态调试，这样是很简单的。我们打开Ollydbg运行到check_key这个函数，修改eax里的值为1，但出现的是一堆乱码：所以说OD可能不行，因为给了三个文件，我们可以用dbg来进行调试。此时一直运行到check_key这里，期间我们随便输入一个key值就行了。然后运行到结束就可以了，我们就能得到flag了。flag就找到了。这道题还有不同的解法，如ida的远程调试，或者静态分析，它之所以给了三个文件，就说明了有不同的解法。后来发现ida上的调试好像也不行，会出乱码。
+知识点这道题我们可以再次学到如何用gdb调试，先用b main下到主函数断点，再n一步一步运行，再在eax中修改值（set ￥eax=1）然后c运行到结尾。
+
+
+Windows_Reverse1根据题目明显是个Windows下的逆向，文件是个exe的文件。 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/168f0d6d/" title="debug &amp; Guess-the-Number &amp; EasyRE">     <img class="post_bg" src="https://s3.ax1x.com/2021/01/11/s8L95n.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="debug &amp; Guess-the-Number &amp; EasyRE"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/168f0d6d/" title="debug &amp; Guess-the-Number &amp; EasyRE">debug &amp; Guess-the-Number &amp; EasyRE</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-11T12:17:54.000Z" title="发表于 2021-01-11 20:17:54">2021-01-11</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客</a></span></div><div class="content">debug看到了这个exe文件（不错，又来个exe）那就先运行一下看看是个什么东东？很简单，什么都没有。先来个基本信息压压惊，再来个ida打开（发现没有办法反编译）然后我想的是看看汇编语言来进行逆向，不过找到了flag却没办法弄出来，所以弄个dnspy这个软件。用dnspy这个打开，运行到入口点即可看到源码，我们找到wrong设置断点，运行一下，看看内存里面有没有我们想要的东西：这样就可以了得到flag了。这道题就是让我们知道一下.net这样的程序怎么来进行反编译的。
+知识点dnSpy是一款针对.NET程序的逆向工程工具。开发人员可以使用它反编译.NET代码，了解到它是如何工作的，以便学习或指导。
+
+
+Guess-the-Number我们可以看到题目的要求为：并且它是个java的代码，我们就要用到java的反编译工具了（JD-GUI）这样子我们就有了点思路了。只要把加密方式搞懂就可以得到flag了（或者直接修改代码，或运行代码来进行解密）。此时我们要注意几个点：一个是guess_number = Integer.parseInt(args[0]);它的意思就是将字符串转成整型（可以理解 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/37bc40c7/" title="攻防世界web新手区">     <img class="post_bg" src="https://s3.ax1x.com/2021/03/04/6ZmYb6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="攻防世界web新手区"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/37bc40c7/" title="攻防世界web新手区">攻防世界web新手区</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-03T11:06:10.000Z" title="发表于 2021-01-03 19:06:10">2021-01-03</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客</a></span></div><div class="content">view_sourse第一题是最简单的，直接F12就可以了；F12是可以打开页面源代码的，也可以在设置中找到；
+
+
+robots第二道题也算是简单的，网上其实有太多的题解，这个直接在网址后加上   /robots.txt 就行了。百度下：robots是网站跟爬虫间的协议，用简单直接的txt格式文本方式告诉对应的爬虫被允许的权限，也就是说robots.txt是搜索引擎中访问网站的时候要查看的第一个文件。当一个搜索蜘蛛访问一个站点时，它会首先检查该站点根目录下是否存在robots.txt，如果存在，搜索机器人就会按照该文件中的内容来确定访问的范围；如果该文件不存在，所有的搜索蜘蛛将能够访问网站上所有没有被口令保护的页面。就知道是个文本行了。这样子flag就得到了 cyberpeace{e9ae1d9e587b8fbfe5c113a090bf28be}
+
+
+backup第三题根据提示，知道是个备份文件，然后再网址后面加上/index.php.bak就自动下载了个文件，然后用记事本打开就行了。index.php的后缀名是bak，但如果遇到其它的，后缀名就不一定是bak了用记事本打开是个代码：这 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/738146b4/" title="re1-100 &amp; 666 &amp; IgniteMe">     <img class="post_bg" src="https://s3.ax1x.com/2021/01/02/sS4oYq.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="re1-100 &amp; 666 &amp; IgniteMe"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/738146b4/" title="re1-100 &amp; 666 &amp; IgniteMe">re1-100 &amp; 666 &amp; IgniteMe</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-02T04:56:42.000Z" title="发表于 2021-01-02 12:56:42">2021-01-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客</a></span></div><div class="content">re1-100先来简单看下信息，了解一下这个文件的信息。然后用ida打开：然后大致找一下，看看主体部分，然后再看看下面的辅助信息：然后我们就去看看confuseKey这个关键函数到底是些什么内容：那flag就是53fc275d81053ed5be8cdaf29f59034938ae4efd这个东西了，这道题不算太难。
+知识点这道题主要还是分析函数，其它没有什么要讲的。
+
+
+666刚开始一定是看看信息了：然后再用ida打开，去看看到底在弄什么名堂，说什么666（哈哈哈）那我们就再看看它的伪代码，来仔细分析一下里面的程序：此时我们就看看encode这个东西，并且我们还可以知道key的值为12（十六进制），enflag为izwhroz””w”v.K”.Ni这一串字符。此时我们就来编个脚本来进行解密：此时就可以了。
+知识点一个小知识吧，就是有时候你要加上括号（符号运算的优先级）平时我们是并不怎么去记忆这些符号运算级的，所以我们加上括号的话，就可以避免这些了。
+
+
+IgniteMe发现是个exe文件（不错，好久没有遇到了）点开程序和其它的一样，没什么不同之处：这是一些基本信息，再来看看ida里面 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/1c1f83f3/" title="parallel-comparator-200 &amp; secret-galaxy-300 &amp; Newbie_calculations">     <img class="post_bg" src="https://s3.ax1x.com/2021/01/02/sS44Ts.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="parallel-comparator-200 &amp; secret-galaxy-300 &amp; Newbie_calculations"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/1c1f83f3/" title="parallel-comparator-200 &amp; secret-galaxy-300 &amp; Newbie_calculations">parallel-comparator-200 &amp; secret-galaxy-300 &amp; Newbie_calculations</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-02T04:56:03.000Z" title="发表于 2021-01-02 12:56:03">2021-01-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客</a></span></div><div class="content">parallel-comparator-200下载开一看竟然是个C语言的代码，很少见呀！话不多说，来看看究竟有什么不同的地方：这样我们就有了个大致了解，我们就看看这个赋值是怎么运作的。此时我们就需要看看*(char *)result这个东西了，它其实是个上面定义的一个函数：此时我们分析可知argument[0]是个随机数（但其实实际上并不是随机数）它的值是个108（调试时可以得到这个值，或着用爆破来实际看一下它的值究竟是个什么）而我们也可以发现just_a_string这个原始数据是没有用的，这个其实是下面比较的事，不在我们的考虑范围之内。脚本：
+1234567d = [0, 9, -9, -1, 13, -13, -4, -11, -9, -1, -7, 6, -13, 13, 3, 9, -13, -11, 6, -7]a = 108for i in range(20):    for k in range(123):        if (a + d[i]) ^ k == 0:            print(chr(k),end=&#x27;&#x27;)           ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/null" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">njh</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/niujunhao1" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:598691779@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/b2b89a7c/" title="红日（1）"><img src="https://s4.ax1x.com/2021/03/20/6htrlQ.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="红日（1）"/></a><div class="content"><a class="title" href="/posts/b2b89a7c/" title="红日（1）">红日（1）</a><time datetime="2021-05-12T12:31:31.000Z" title="发表于 2021-05-12 20:31:31">2021-05-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/facc626e/" title="ctfshowSSRF"><img src="https://z3.ax1x.com/2021/04/26/gpknHI.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ctfshowSSRF"/></a><div class="content"><a class="title" href="/posts/facc626e/" title="ctfshowSSRF">ctfshowSSRF</a><time datetime="2021-04-26T10:58:38.000Z" title="发表于 2021-04-26 18:58:38">2021-04-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/40ef20eb/" title="ctfshow文件上传"><img src="https://z3.ax1x.com/2021/04/24/cjOgwn.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ctfshow文件上传"/></a><div class="content"><a class="title" href="/posts/40ef20eb/" title="ctfshow文件上传">ctfshow文件上传</a><time datetime="2021-04-24T07:37:39.000Z" title="发表于 2021-04-24 15:37:39">2021-04-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/b7f98d36/" title="deedeedee &amp; zorropub &amp; BabyXor"><img src="https://z3.ax1x.com/2021/04/23/cX2WtI.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="deedeedee &amp; zorropub &amp; BabyXor"/></a><div class="content"><a class="title" href="/posts/b7f98d36/" title="deedeedee &amp; zorropub &amp; BabyXor">deedeedee &amp; zorropub &amp; BabyXor</a><time datetime="2021-04-23T09:45:23.000Z" title="发表于 2021-04-23 17:45:23">2021-04-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/46785775/" title="ctfshow-JAVA"><img src="https://z3.ax1x.com/2021/04/20/c77ob4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ctfshow-JAVA"/></a><div class="content"><a class="title" href="/posts/46785775/" title="ctfshow-JAVA">ctfshow-JAVA</a><time datetime="2021-04-20T08:26:12.000Z" title="发表于 2021-04-20 16:26:12">2021-04-20</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"><span class="card-category-list-name">个人博客</span><span class="card-category-list-count">41</span></a></li>
+            
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/crypto/" style="font-size: 1.1em; color: #999">crypto</a> <a href="/tags/misc/" style="font-size: 1.2em; color: #999da3">misc</a> <a href="/tags/mobile/" style="font-size: 1.2em; color: #999da3">mobile</a> <a href="/tags/pwn/" style="font-size: 1.3em; color: #99a1ac">pwn</a> <a href="/tags/reverse/" style="font-size: 1.5em; color: #99a9bf">reverse</a> <a href="/tags/web/" style="font-size: 1.4em; color: #99a5b6">web</a> <a href="/tags/wp/" style="font-size: 1.1em; color: #999">wp</a> <a href="/tags/%E6%84%9F%E6%83%B3/" style="font-size: 1.1em; color: #999">感想</a> <a href="/tags/%E6%B8%97%E9%80%8F/" style="font-size: 1.1em; color: #999">渗透</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">五月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/04/"><span class="card-archive-list-date">四月 2021</span><span class="card-archive-list-count">11</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/03/"><span class="card-archive-list-date">三月 2021</span><span class="card-archive-list-count">10</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/02/"><span class="card-archive-list-date">二月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item more is-center"><a class="card-archive-list-link-more" href="/archives/">
+              <span>查看更多</span><i class="fas fa-angle-right"  ></i></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">41</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-05-24T11:28:30.718Z"></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By njh</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>

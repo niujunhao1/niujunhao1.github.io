@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MIPS指令 | njhhk</title><meta name="keywords" content="reverse"><meta name="author" content="njh"><meta name="copyright" content="njh"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="MIPS指令及retdec">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MIPS指令">
+<meta property="og:url" content="https://niujunhao1.github.io/posts/7fa8b4a9/index.html">
+<meta property="og:site_name" content="njhhk">
+<meta property="og:description" content="MIPS指令及retdec">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s3.ax1x.com/2020/12/21/rB3Fzj.jpg">
+<meta property="article:published_time" content="2020-12-16T13:24:13.000Z">
+<meta property="article:modified_time" content="2020-12-23T12:57:36.949Z">
+<meta property="article:author" content="njh">
+<meta property="article:tag" content="reverse">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.ax1x.com/2020/12/21/rB3Fzj.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://niujunhao1.github.io/posts/7fa8b4a9/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2020-12-23 20:57:36'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/null" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://s3.ax1x.com/2020/12/21/rB3Fzj.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">njhhk</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MIPS指令</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-16T13:24:13.000Z" title="发表于 2020-12-16 21:24:13">2020-12-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-23T12:57:36.949Z" title="更新于 2020-12-23 20:57:36">2020-12-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>因为recerse有的题需要，所以整理了一下MIPS指令。<br>MIPS是在ida中无法反编译的，所以我整理下MIPS指令，这样以后就方便许多了。<br>不过MIPS还是可以反编译的，需要安装个ida的插件retdec，并解压到IDA插件目录（X:\IDA_Pro_v7.0\plugins）里。<br>这就行了！！！</p>
+<p>指令实例：</p>
+<ol>
+<li><p>load/store<br>la $t0, val_1 复制val_1表示的地址到t0寄存器中    　　注： val_1是个Label<br>　lw $t2, ($t0) t0寄存器中的值作为地址，把这个地址起始的Word 复制到t2 中<br>　lw $t2, 4($t0) t0寄存器中的值作为地址， 把这个地址再加上偏移量4后 所起始的Word 复制到t2 中<br>　sw $t2, ($t0) 把t2寄存器中值（1 Word），存储到t0的值所指向的RAM中<br>　sw $t2, -12($t0) 把t2寄存器中值（1 Word），存储到t0的值再减去偏移量12, 所指向的RAM 中</p>
+</li>
+<li><p>算数运算指令<br>　　算数运算指令的所有操作数都是寄存器，不能直接使用RAM地址或间接寻址。<br>　　操作数的大小都为 Word （4-Byte）<br>　　指令格式与实例 注释<br>　　move $t5, $t1            // $t5 = $t1;<br>　　add $t0, $t1,            // $t2 $t0 = $t1 + $t2; 带符号数相加<br>　　sub $t0, $t1,        // $t2 $t0 = $t1 - $t2; 带符号数相减<br>　　addi $t0, $t1, 5      // $t0 = $t1 + 5;<br>　　addu $t0, $t1, $t2  // $t0 = $t1 + $t2; 无符号数相加<br>　　subu $t0, $t1, $t2  // $t0 = $t1 - $t2; 无符号数相减<br>　　mult $t3, $t4            // $t3 * $t4, 把64-Bits 的积，存储到Lo，Hi中。即： (Hi, Lo) = $t3 * $t4;<br>　　div $t5, $t6              // Lo = $t5 / $t6 (Lo为商的整数部分);　Hi = $t5 mod $t6 (Hi为余数)<br>　　mfhi $t0                      // $t0 = Hi<br>　　mflo $t1             // $t1 = Lo</p>
+</li>
+<li><p>分支跳转指令<br>　分支指令格式与实例 注释<br>　　b target 无条件的分支跳转，将跳转到target 标签处<br>　　beq $t0, $t1, target            // 如果 $t0 == $t1, 则跳转到target 标签处<br>　　blt $t0, $t1, target            // 如果 $t0 &lt; $t1,  则跳转到target 标签处<br>　　ble $t0, $t1, target            // 如果 $t0 &lt;=$t1,  则跳转到target 标签处<br>　　bgt $t0, $t1, target            // 如果 $t0 &gt; $t1,  则跳转到target 标签处<br>　　bge $t0, $t1, target            // 如果 $t0 &gt;= $t1, 则跳转到target 标签处<br>　　bne $t0, $t1, target            // 如果 $t0 != $t1, 则跳转到target 标签处</p>
+</li>
+<li><p>跳转指令<br>　指令格式与实例 注释<br>　　j target                  // 无条件的跳转, 将跳转到target 标签处<br>　　jr $t3                      // 跳转到t3寄存器所指向的地址处（Jump Register）</p>
+</li>
+<li><p>子函数调用指令<br>　指令格式与实例 注释<br>　　jal sub_routine_label 执行步骤：<br>　　a. 复制当前的PC（Program Counter）到$ra寄存器中。 因为当前的PC 值就是子函数执行完毕后的返回地址。<br>　　b. 程序跳转到子程序标签sub_routine_label处。　　<br>　　注：子函数的返回，使用 jr $ra　　<br>　　如果子函数内又调用了其他的子函数，那么$ra的值应该被保存到堆栈中。 因为$ra的值总是对应着当前执<br>   行的子函数的返回地址。</p>
+</li>
+</ol>
+<!--音乐-->
+<div style="position:abolute; bottom:100px; left:0px; width:50%">
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=461080452&auto=1&height=66"></iframe>
+</div> 
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">njh</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://niujunhao1.github.io/posts/7fa8b4a9/">https://niujunhao1.github.io/posts/7fa8b4a9/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://niujunhao1.github.io" target="_blank">njhhk</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/reverse/">reverse</a></div><div class="post_share"><div class="social-share" data-image="https://s3.ax1x.com/2020/12/21/rB3Fzj.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/886d7a79/"><img class="prev-cover" src="https://s3.ax1x.com/2020/12/23/r6O5o6.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">攻防世界reverse新手题</div></div></a></div><div class="next-post pull-right"><a href="/posts/f3d708e2/"><img class="next-cover" src="https://s3.ax1x.com/2020/12/05/DOwkz6.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">小工具使用1</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/884863d2/" title="easyre-153 & notsequence & Replace"><img class="cover" src="https://s3.ax1x.com/2021/03/07/6MDWlT.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-03-07</div><div class="title">easyre-153 & notsequence & Replace</div></div></a></div><div><a href="/posts/d63ad51c/" title="Shuffle & srm-50 & Mysterious"><img class="cover" src="https://s3.ax1x.com/2020/12/28/rTvZkV.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-27</div><div class="title">Shuffle & srm-50 & Mysterious</div></div></a></div><div><a href="/posts/168f0d6d/" title="debug & Guess-the-Number & EasyRE"><img class="cover" src="https://s3.ax1x.com/2021/01/11/s8L95n.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-01-11</div><div class="title">debug & Guess-the-Number & EasyRE</div></div></a></div><div><a href="/posts/e62c39c4/" title="elrond32 & answer_to_everything & Reversing-x64Elf-100"><img class="cover" src="https://s3.ax1x.com/2020/12/28/rTvupF.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-29</div><div class="title">elrond32 & answer_to_everything & Reversing-x64Elf-100</div></div></a></div><div><a href="/posts/ab329a96/" title="hackme & re-for-50-plz-50 & dmd-50"><img class="cover" src="https://s3.ax1x.com/2021/01/02/sS40wd.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-01-02</div><div class="title">hackme & re-for-50-plz-50 & dmd-50</div></div></a></div><div><a href="/posts/1c1f83f3/" title="parallel-comparator-200 & secret-galaxy-300 & Newbie_calculations"><img class="cover" src="https://s3.ax1x.com/2021/01/02/sS44Ts.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-01-02</div><div class="title">parallel-comparator-200 & secret-galaxy-300 & Newbie_calculations</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/null" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">njh</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/niujunhao1" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:598691779@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/b2b89a7c/" title="红日（1）"><img src="https://s4.ax1x.com/2021/03/20/6htrlQ.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="红日（1）"/></a><div class="content"><a class="title" href="/posts/b2b89a7c/" title="红日（1）">红日（1）</a><time datetime="2021-05-12T12:31:31.000Z" title="发表于 2021-05-12 20:31:31">2021-05-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/facc626e/" title="ctfshowSSRF"><img src="https://z3.ax1x.com/2021/04/26/gpknHI.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ctfshowSSRF"/></a><div class="content"><a class="title" href="/posts/facc626e/" title="ctfshowSSRF">ctfshowSSRF</a><time datetime="2021-04-26T10:58:38.000Z" title="发表于 2021-04-26 18:58:38">2021-04-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/40ef20eb/" title="ctfshow文件上传"><img src="https://z3.ax1x.com/2021/04/24/cjOgwn.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ctfshow文件上传"/></a><div class="content"><a class="title" href="/posts/40ef20eb/" title="ctfshow文件上传">ctfshow文件上传</a><time datetime="2021-04-24T07:37:39.000Z" title="发表于 2021-04-24 15:37:39">2021-04-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/b7f98d36/" title="deedeedee &amp; zorropub &amp; BabyXor"><img src="https://z3.ax1x.com/2021/04/23/cX2WtI.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="deedeedee &amp; zorropub &amp; BabyXor"/></a><div class="content"><a class="title" href="/posts/b7f98d36/" title="deedeedee &amp; zorropub &amp; BabyXor">deedeedee &amp; zorropub &amp; BabyXor</a><time datetime="2021-04-23T09:45:23.000Z" title="发表于 2021-04-23 17:45:23">2021-04-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/46785775/" title="ctfshow-JAVA"><img src="https://z3.ax1x.com/2021/04/20/c77ob4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ctfshow-JAVA"/></a><div class="content"><a class="title" href="/posts/46785775/" title="ctfshow-JAVA">ctfshow-JAVA</a><time datetime="2021-04-20T08:26:12.000Z" title="发表于 2021-04-20 16:26:12">2021-04-20</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By njh</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: 'UJ35PRlWeRBt4EJrsSMVD4O4-gzGzoHsz',
+      appKey: 'IOmK3cfmaoJ7RRzOSUq29wxR',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign({}, initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
